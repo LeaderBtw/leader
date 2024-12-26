@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien 3023 - The Alien Memecoin Taking Over the Galaxy</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         :root {
             --background: 0 0% 0%; /* Black */
@@ -275,11 +277,10 @@
         </div>
     </section>
 
-    <section id="game" class="section">
+    <section id="game" class="section" data-aos="fade-up">
         <div class="container">
             <h2 class="text-glow">History of Alien 3023</h2>
             <div class="history-content">
-                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" class="alien-image">
                 <p>
                     In the year <strong>3023</strong>, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
                     Fascinated by humanity's creation of cryptocurrencies, they decided to create their own memecoin: 
@@ -290,11 +291,12 @@
                     They launched Alien 3023 as a token of unity between humans and extraterrestrials, 
                     symbolizing the fusion of Earth's technology and alien innovation.
                 </p>
-                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" class="alien-image">
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" class="alien-image" data-aos="zoom-in">
                 <p>
                     The aliens also introduced a revolutionary <strong>"Alien Wallet"</strong> that allows seamless intergalactic transactions. 
                     With Alien 3023, humans and aliens can now trade, invest, and explore the universe together.
                 </p>
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" class="alien-image" data-aos="zoom-in">
                 <p>
                     Today, Alien 3023 is more than just a memecoin—it's a movement. 
                     Join us as we unlock the mysteries of the cosmos and build a future where Earth and the stars are one.
@@ -303,30 +305,30 @@
         </div>
     </section>
 
-    <section id="stats" class="section">
+    <section id="stats" class="section" data-aos="fade-up">
         <div class="container">
             <h2 class="text-glow">Alien 3023 Token Stats</h2>
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card" data-aos="fade-right">
                     <h3>Current Price</h3>
                     <p id="currentPrice">Loading...</p>
                 </div>
-                <div class="stat-card" style="animation-delay: -1s;">
+                <div class="stat-card" data-aos="fade-up">
                     <h3>Market Cap</h3>
                     <p id="marketCap">Loading...</p>
                 </div>
-                <div class="stat-card" style="animation-delay: -2s;">
+                <div class="stat-card" data-aos="fade-left">
                     <h3>24h Volume</h3>
                     <p id="volume24h">Loading...</p>
                 </div>
             </div>
-            <div class="chart-container">
+            <div class="chart-container" data-aos="zoom-in">
                 <iframe src="https://dexscreener.com/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt?embed=1&theme=dark"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section" data-aos="fade-up">
         <div class="container">
             <h2 class="text-glow">About Alien 3023</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -342,19 +344,19 @@
         </div>
     </section>
 
-    <section id="roadmap" class="section">
+    <section id="roadmap" class="section" data-aos="fade-up">
         <div class="container">
             <h2 class="text-glow">Roadmap</h2>
             <div class="roadmap">
-                <div class="roadmap-item">
+                <div class="roadmap-item" data-aos="fade-right">
                     <h3 class="text-glow">Phase 1: Alien Arrival</h3>
                     <p>Token launch, website release, and initial marketing invasion</p>
                 </div>
-                <div class="roadmap-item">
+                <div class="roadmap-item" data-aos="fade-up">
                     <h3 class="text-glow">Phase 2: Alien Expansion</h3>
                     <p>Community growth, partnerships, and "Alien Wallet" development</p>
                 </div>
-                <div class="roadmap-item">
+                <div class="roadmap-item" data-aos="fade-left">
                     <h3 class="text-glow">Phase 3: Alien Ecosystem</h3>
                     <p>Launch of "Alien Wallet", advanced Solana features, and token utility expansion</p>
                 </div>
@@ -362,7 +364,15 @@
         </div>
     </section>
 
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000, // Animation duration
+            once: true, // Animate only once
+        });
+
         document.addEventListener('DOMContentLoaded', (event) => {
             // Fetch live token stats from DexScreener API
             const fetchTokenStats = async () => {
