@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$LOCKED IN ALIEN - The Alien Memecoin Taking Over the Galaxy</title>
+    <title>Alien 3023 - The Alien Memecoin Taking Over the Galaxy</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -111,15 +111,6 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(128, 128, 128, 0.2);
         }
 
-        .game-placeholder {
-            aspect-ratio: 16 / 9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            text-transform: uppercase;
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -202,65 +193,92 @@
             height: 100%;
             border: none;
         }
+
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .history-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .alien-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
-            <a href="#" class="logo text-glow">$LOCKED IN ALIEN</a>
+            <a href="#" class="logo text-glow">Alien 3023</a>
             <div>
-                <a href="#game">Game</a>
-                <a href="#wallet">Wallet</a>
+                <a href="#game">History</a>
                 <a href="#stats">Stats</a>
                 <a href="#about">About</a>
                 <a href="#roadmap">Roadmap</a>
             </div>
-            <button class="button" id="connectWallet">Connect Phantom</button>
+            <button class="button">Buy Alien 3023</button>
         </div>
     </nav>
 
     <section class="hero">
         <div class="container">
-            <h1 class="text-glow">Welcome to $LOCKED IN ALIEN</h1>
+            <h1 class="text-glow">Welcome to Alien 3023</h1>
             <p>The alien memecoin taking over the galaxy</p>
-            <button class="button">Buy $LOCKED IN ALIEN</button>
+            <button class="button">Buy Alien 3023</button>
         </div>
     </section>
 
     <section id="game" class="section">
         <div class="container">
-            <h2 class="text-glow">$LOCKED IN ALIEN Game</h2>
-            <div class="game-placeholder">
-                <p>Alien Invasion coming soon...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="wallet" class="section">
-        <div class="container">
-            <h2 class="text-glow">Wallet Integration</h2>
-            <div class="wallet-placeholder">
-                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 1rem;">Connect your Phantom wallet to interact with $LOCKED IN ALIEN</p>
-                <button class="button" style="display: block; width: 100%;" id="connectWalletSection">Connect Phantom Wallet</button>
+            <h2 class="text-glow">History of Alien 3023</h2>
+            <div class="history-content">
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" class="alien-image">
+                <p>
+                    In the year 3023, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
+                    Fascinated by humanity's creation of cryptocurrencies, they decided to create their own memecoin: 
+                    <strong>Alien 3023</strong>.
+                </p>
+                <p>
+                    The aliens chose Solana as their blockchain of choice due to its speed and scalability. 
+                    They launched Alien 3023 as a token of unity between humans and extraterrestrials, 
+                    symbolizing the fusion of Earth's technology and alien innovation.
+                </p>
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" class="alien-image">
+                <p>
+                    The aliens also introduced a revolutionary "Alien Wallet" that allows seamless intergalactic transactions. 
+                    With Alien 3023, humans and aliens can now trade, invest, and explore the universe together.
+                </p>
+                <p>
+                    Today, Alien 3023 is more than just a memecoin—it's a movement. 
+                    Join us as we unlock the mysteries of the cosmos and build a future where Earth and the stars are one.
+                </p>
             </div>
         </div>
     </section>
 
     <section id="stats" class="section">
         <div class="container">
-            <h2 class="text-glow">$LOCKED IN ALIEN Token Stats</h2>
+            <h2 class="text-glow">Alien 3023 Token Stats</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Current Price</h3>
-                    <p>$0.000001</p>
+                    <p id="currentPrice">Loading...</p>
                 </div>
                 <div class="stat-card" style="animation-delay: -1s;">
                     <h3>Market Cap</h3>
-                    <p>$1,000,000</p>
+                    <p id="marketCap">Loading...</p>
                 </div>
                 <div class="stat-card" style="animation-delay: -2s;">
                     <h3>24h Volume</h3>
-                    <p>$500,000</p>
+                    <p id="volume24h">Loading...</p>
                 </div>
             </div>
             <div class="chart-container">
@@ -271,15 +289,15 @@
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="text-glow">About $LOCKED IN ALIEN</h2>
+            <h2 class="text-glow">About Alien 3023</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="font-size: 1.25rem; margin-bottom: 1rem;">
-                    $LOCKED IN ALIEN isn't just another memecoin. It's an intergalactic phenomenon taking over the crypto galaxy. 
+                    Alien 3023 isn't just another memecoin. It's an intergalactic phenomenon taking over the crypto galaxy. 
                     Our mission is to create a thriving ecosystem where aliens and humans unite.
                 </p>
                 <p style="font-size: 1.25rem;">
-                    With our innovative "Alien Invasion" game, seamless Phantom wallet integration, 
-                    and a community-driven approach, $LOCKED IN ALIEN is set to become the next big thing in the universe of cryptocurrencies.
+                    With our innovative "Alien Wallet", seamless Solana integration, 
+                    and a community-driven approach, Alien 3023 is set to become the next big thing in the universe of cryptocurrencies.
                 </p>
             </div>
         </div>
@@ -295,49 +313,42 @@
                 </div>
                 <div class="roadmap-item">
                     <h3 class="text-glow">Phase 2: Alien Expansion</h3>
-                    <p>Community growth, partnerships, and "Alien Invasion" game development</p>
+                    <p>Community growth, partnerships, and "Alien Wallet" development</p>
                 </div>
                 <div class="roadmap-item">
                     <h3 class="text-glow">Phase 3: Alien Ecosystem</h3>
-                    <p>Launch of "Alien Invasion", advanced Phantom wallet features, and token utility expansion</p>
+                    <p>Launch of "Alien Wallet", advanced Solana features, and token utility expansion</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Phantom Wallet SDK -->
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
-            const connectWalletButtons = document.querySelectorAll('#connectWallet, #connectWalletSection');
-
-            const connectPhantomWallet = async () => {
-                if (!window.solana || !window.solana.isPhantom) {
-                    alert('Phantom Wallet is not installed. Please install it to proceed.');
-                    return;
-                }
+            // Fetch live token stats from DexScreener API
+            const fetchTokenStats = async () => {
+                const apiUrl = 'https://api.dexscreener.com/latest/dex/pairs/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt';
 
                 try {
-                    // Connect to Phantom Wallet
-                    const response = await window.solana.connect();
-                    const publicKey = response.publicKey.toString();
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
 
-                    // Update UI
-                    connectWalletButtons.forEach(btn => {
-                        btn.textContent = `Connected: ${publicKey.slice(0, 6)}...${publicKey.slice(-4)}`;
-                        btn.disabled = true;
-                    });
+                    if (data.pair) {
+                        const { priceUsd, fdv, volume } = data.pair;
 
-                    alert(`Wallet connected successfully! Public Key: ${publicKey}`);
-                } catch (err) {
-                    console.error('Error connecting to Phantom Wallet:', err);
-                    alert('Failed to connect to Phantom Wallet.');
+                        // Update the DOM with live stats
+                        document.getElementById('currentPrice').textContent = `$${parseFloat(priceUsd).toFixed(6)}`;
+                        document.getElementById('marketCap').textContent = `$${(parseFloat(fdv) / 1e6).toFixed(2)}M`;
+                        document.getElementById('volume24h').textContent = `$${(parseFloat(volume.h24) / 1e3).toFixed(2)}K`;
+                    }
+                } catch (error) {
+                    console.error('Error fetching token stats:', error);
                 }
             };
 
-            connectWalletButtons.forEach(button => {
-                button.addEventListener('click', connectPhantomWallet);
-            });
+            // Fetch stats initially and every 30 seconds
+            fetchTokenStats();
+            setInterval(fetchTokenStats, 30000);
         });
     </script>
 </body>
