@@ -13,18 +13,52 @@
             --secondary: 0 0% 50%; /* Gray */
         }
 
+        /* Background Image */
+        .alien-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file-83Z5SQ3L1jN8gPdizFTQEj-removebg-preview-G6202Bea1lzYYAli6BXDPY6ZpqOpZB.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .background-alien {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file-83Z5SQ3L1jN8gPdizFTQEj-removebg-preview-G6202Bea1lzYYAli6BXDPY6ZpqOpZB.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+            pointer-events: none;
+        }
+
         body {
             font-family: 'Orbitron', sans-serif;
             background-color: hsl(var(--background));
             color: hsl(var(--foreground));
             margin: 0;
             padding: 0;
+            position: relative;
         }
 
         .container {
+            position: relative;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            z-index: 1;
         }
 
         nav {
@@ -198,6 +232,8 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .history-content p {
@@ -215,6 +251,9 @@
     </style>
 </head>
 <body>
+    <div class="alien-background"></div>
+    <div class="background-alien"></div>
+
     <nav>
         <div class="container">
             <a href="#" class="logo text-glow">Alien 3023</a>
@@ -242,18 +281,18 @@
             <div class="history-content">
                 <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" class="alien-image">
                 <p>
-                    In the year 3023, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
+                    In the year <strong>3023</strong>, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
                     Fascinated by humanity's creation of cryptocurrencies, they decided to create their own memecoin: 
                     <strong>Alien 3023</strong>.
                 </p>
                 <p>
-                    The aliens chose Solana as their blockchain of choice due to its speed and scalability. 
+                    The aliens chose <strong>Solana</strong> as their blockchain of choice due to its speed and scalability. 
                     They launched Alien 3023 as a token of unity between humans and extraterrestrials, 
                     symbolizing the fusion of Earth's technology and alien innovation.
                 </p>
                 <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" class="alien-image">
                 <p>
-                    The aliens also introduced a revolutionary "Alien Wallet" that allows seamless intergalactic transactions. 
+                    The aliens also introduced a revolutionary <strong>"Alien Wallet"</strong> that allows seamless intergalactic transactions. 
                     With Alien 3023, humans and aliens can now trade, invest, and explore the universe together.
                 </p>
                 <p>
