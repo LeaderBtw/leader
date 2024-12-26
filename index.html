@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Oasis - The Funnest Memecoin in the Crypto Desert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: 180 100% 10%;
+            --foreground: 180 5% 95%;
+            --primary: 180 100% 50%;
+            --secondary: 300 100% 50%;
+        }
+
+        body {
+            font-family: 'Bangers', cursive;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            background-image: url('https://placeholder.com/desert-background');
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(0, 128, 128, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            margin: 0 0.5rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .button {
+            background: linear-gradient(to right, #2dd4bf, #a855f7);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-family: 'Bangers', cursive;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #14b8a6, #9333ea);
+        }
+
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .float {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .game-placeholder, .wallet-placeholder, .stats-grid, .roadmap {
+            background: linear-gradient(to bottom right, rgba(45, 212, 191, 0.2), rgba(168, 85, 247, 0.2));
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(45, 212, 191, 0.5), 0 0 30px rgba(168, 85, 247, 0.5);
+        }
+
+        .game-placeholder {
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .roadmap {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #2dd4bf;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -2.25rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: #a855f7;
+            border-radius: 50%;
+        }
+
+        .roadmap-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(45, 212, 191, 0.5), 0 0 20px rgba(168, 85, 247, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="logo text-glow">$Oasis</a>
+            <div>
+                <a href="#game">Game</a>
+                <a href="#wallet">Wallet</a>
+                <a href="#stats">Stats</a>
+                <a href="#about">About</a>
+                <a href="#roadmap">Roadmap</a>
+            </div>
+            <button class="button" id="connectWallet">Connect Phantom</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="text-glow">Welcome to $Oasis</h1>
+            <p>The memecoin that brings life to the crypto desert</p>
+            <button class="button">Buy $Oasis</button>
+        </div>
+        <img src="https://placeholder.com/256" alt="Floating cactus" class="float" style="top: 50%; left: 25%; transform: translate(-50%, -50%);">
+        <img src="https://placeholder.com/192" alt="Floating coin" class="float" style="top: 33%; right: 25%; transform: translate(50%, -50%); animation-delay: -2s;">
+    </section>
+
+    <section id="game" class="section">
+        <div class="container">
+            <h2 class="text-glow">$Oasis Game</h2>
+            <div class="game-placeholder">
+                <p>Oasis Oasis Revolution coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="wallet" class="section">
+        <div class="container">
+            <h2 class="text-glow">Wallet Integration</h2>
+            <div class="wallet-placeholder">
+                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 1rem;">Connect your Phantom wallet to interact with $Oasis</p>
+                <button class="button" style="display: block; width: 100%;" id="connectWalletSection">Connect Phantom Wallet</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="section">
+        <div class="container">
+            <h2 class="text-glow">$Oasis Token Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Current Price</h3>
+                    <p>$0.000001</p>
+                </div>
+                <div class="stat-card" style="animation-delay: -1s;">
+                    <h3>Market Cap</h3>
+                    <p>$1,000,000</p>
+                </div>
+                <div class="stat-card" style="animation-delay: -2s;">
+                    <h3>24h Volume</h3>
+                    <p>$500,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="text-glow">About $Oasis</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.25rem; margin-bottom: 1rem;">
+                    $Oasis isn't just another memecoin. It's a crypto oasis in the vast desert of tokens. 
+                    Our mission is to create a thriving ecosystem where fun meets finance.
+                </p>
+                <p style="font-size: 1.25rem;">
+                    With our innovative "Oasis Oasis Revolution" game, seamless Phantom wallet integration, 
+                    and a community-driven approach, $Oasis is set to become the next big thing in the world of cryptocurrencies.
+                </p>
+            </div>
+        </div>
+        <img src="https://placeholder.com/256" alt="Floating palm tree" class="float" style="bottom: 0; left: 0;">
+        <img src="https://placeholder.com/192" alt="Floating oasis" class="float" style="top: 25%; right: 0; animation-delay: -3s;">
+    </section>
+
+    <section id="roadmap" class="section">
+        <div class="container">
+            <h2 class="text-glow">Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <h3 class="text-glow">Phase 1: Oasis Discovery</h3>
+                    <p>Token launch, website release, and initial marketing sandstorm</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3 class="text-glow">Phase 2: Oasis Expansion</h3>
+                    <p>Community growth, partnerships, and "Oasis Oasis Revolution" game development</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3 class="text-glow">Phase 3: Oasis Ecosystem</h3>
+                    <p>Launch of "Oasis Oasis Revolution", advanced Phantom wallet features, and token utility expansion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const connectWalletButtons = document.querySelectorAll('#connectWallet, #connectWalletSection');
+            
+            connectWalletButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Simulate wallet connection
+                    setTimeout(() => {
+                        alert('Wallet connected successfully!');
+                        connectWalletButtons.forEach(btn => {
+                            btn.textContent = 'Wallet Connected';
+                            btn.disabled = true;
+                        });
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
