@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$Oasis - The Funnest Memecoin in the Crypto Desert</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>$LOCKED IN ALIEN - The Alien Memecoin Taking Over the Galaxy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --background: 180 100% 10%;
-            --foreground: 180 5% 95%;
-            --primary: 180 100% 50%;
-            --secondary: 300 100% 50%;
+            --background: 0 0% 0%; /* Black */
+            --foreground: 0 0% 100%; /* White */
+            --primary: 0 0% 100%; /* White */
+            --secondary: 0 0% 50%; /* Gray */
         }
 
         body {
-            font-family: 'Bangers', cursive;
+            font-family: 'Orbitron', sans-serif;
             background-color: hsl(var(--background));
             color: hsl(var(--foreground));
-            background-image: url('https://placeholder.com/desert-background');
-            background-size: cover;
-            background-attachment: fixed;
             margin: 0;
             padding: 0;
         }
@@ -36,7 +33,7 @@
             left: 0;
             right: 0;
             z-index: 50;
-            background-color: rgba(0, 128, 128, 0.5);
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(4px);
         }
 
@@ -57,21 +54,23 @@
         .logo {
             font-size: 2.5rem;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
         .button {
-            background: linear-gradient(to right, #2dd4bf, #a855f7);
-            color: white;
+            background: linear-gradient(to right, #000, #fff);
+            color: black;
             border: none;
             padding: 0.75rem 1.5rem;
             font-size: 1.25rem;
             border-radius: 9999px;
             cursor: pointer;
-            font-family: 'Bangers', cursive;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
         }
 
         .button:hover {
-            background: linear-gradient(to right, #14b8a6, #9333ea);
+            background: linear-gradient(to right, #333, #ccc);
         }
 
         .hero {
@@ -85,22 +84,13 @@
         .hero h1 {
             font-size: 5rem;
             margin-bottom: 1rem;
+            text-transform: uppercase;
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-        }
-
-        .float {
-            position: absolute;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            text-transform: uppercase;
         }
 
         .section {
@@ -111,13 +101,14 @@
             font-size: 3rem;
             text-align: center;
             margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .game-placeholder, .wallet-placeholder, .stats-grid, .roadmap {
-            background: linear-gradient(to bottom right, rgba(45, 212, 191, 0.2), rgba(168, 85, 247, 0.2));
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.1));
             border-radius: 0.5rem;
             padding: 2rem;
-            box-shadow: 0 0 15px rgba(45, 212, 191, 0.5), 0 0 30px rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(128, 128, 128, 0.2);
         }
 
         .game-placeholder {
@@ -126,12 +117,14 @@
             align-items: center;
             justify-content: center;
             font-size: 2rem;
+            text-transform: uppercase;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .stat-card {
@@ -147,6 +140,7 @@
         .stat-card h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
 
         .stat-card p {
@@ -166,7 +160,7 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background-color: #2dd4bf;
+            background-color: #fff;
         }
 
         .roadmap-item {
@@ -181,24 +175,39 @@
             top: 0.5rem;
             width: 1rem;
             height: 1rem;
-            background-color: #a855f7;
+            background-color: #fff;
             border-radius: 50%;
         }
 
         .roadmap-item h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
 
         .text-glow {
-            text-shadow: 0 0 10px rgba(45, 212, 191, 0.5), 0 0 20px rgba(168, 85, 247, 0.5);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(128, 128, 128, 0.5);
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .chart-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
-            <a href="#" class="logo text-glow">$Oasis</a>
+            <a href="#" class="logo text-glow">$LOCKED IN ALIEN</a>
             <div>
                 <a href="#game">Game</a>
                 <a href="#wallet">Wallet</a>
@@ -212,19 +221,17 @@
 
     <section class="hero">
         <div class="container">
-            <h1 class="text-glow">Welcome to $Oasis</h1>
-            <p>The memecoin that brings life to the crypto desert</p>
-            <button class="button">Buy $Oasis</button>
+            <h1 class="text-glow">Welcome to $LOCKED IN ALIEN</h1>
+            <p>The alien memecoin taking over the galaxy</p>
+            <button class="button">Buy $LOCKED IN ALIEN</button>
         </div>
-        <img src="https://placeholder.com/256" alt="Floating cactus" class="float" style="top: 50%; left: 25%; transform: translate(-50%, -50%);">
-        <img src="https://placeholder.com/192" alt="Floating coin" class="float" style="top: 33%; right: 25%; transform: translate(50%, -50%); animation-delay: -2s;">
     </section>
 
     <section id="game" class="section">
         <div class="container">
-            <h2 class="text-glow">$Oasis Game</h2>
+            <h2 class="text-glow">$LOCKED IN ALIEN Game</h2>
             <div class="game-placeholder">
-                <p>Oasis Oasis Revolution coming soon...</p>
+                <p>Alien Invasion coming soon...</p>
             </div>
         </div>
     </section>
@@ -233,7 +240,7 @@
         <div class="container">
             <h2 class="text-glow">Wallet Integration</h2>
             <div class="wallet-placeholder">
-                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 1rem;">Connect your Phantom wallet to interact with $Oasis</p>
+                <p style="text-align: center; font-size: 1.5rem; margin-bottom: 1rem;">Connect your Phantom wallet to interact with $LOCKED IN ALIEN</p>
                 <button class="button" style="display: block; width: 100%;" id="connectWalletSection">Connect Phantom Wallet</button>
             </div>
         </div>
@@ -241,7 +248,7 @@
 
     <section id="stats" class="section">
         <div class="container">
-            <h2 class="text-glow">$Oasis Token Stats</h2>
+            <h2 class="text-glow">$LOCKED IN ALIEN Token Stats</h2>
             <div class="stats-grid">
                 <div class="stat-card">
                     <h3>Current Price</h3>
@@ -256,25 +263,26 @@
                     <p>$500,000</p>
                 </div>
             </div>
+            <div class="chart-container">
+                <iframe src="https://dexscreener.com/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt?embed=1&theme=dark"></iframe>
+            </div>
         </div>
     </section>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="text-glow">About $Oasis</h2>
+            <h2 class="text-glow">About $LOCKED IN ALIEN</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p style="font-size: 1.25rem; margin-bottom: 1rem;">
-                    $Oasis isn't just another memecoin. It's a crypto oasis in the vast desert of tokens. 
-                    Our mission is to create a thriving ecosystem where fun meets finance.
+                    $LOCKED IN ALIEN isn't just another memecoin. It's an intergalactic phenomenon taking over the crypto galaxy. 
+                    Our mission is to create a thriving ecosystem where aliens and humans unite.
                 </p>
                 <p style="font-size: 1.25rem;">
-                    With our innovative "Oasis Oasis Revolution" game, seamless Phantom wallet integration, 
-                    and a community-driven approach, $Oasis is set to become the next big thing in the world of cryptocurrencies.
+                    With our innovative "Alien Invasion" game, seamless Phantom wallet integration, 
+                    and a community-driven approach, $LOCKED IN ALIEN is set to become the next big thing in the universe of cryptocurrencies.
                 </p>
             </div>
         </div>
-        <img src="https://placeholder.com/256" alt="Floating palm tree" class="float" style="bottom: 0; left: 0;">
-        <img src="https://placeholder.com/192" alt="Floating oasis" class="float" style="top: 25%; right: 0; animation-delay: -3s;">
     </section>
 
     <section id="roadmap" class="section">
@@ -282,36 +290,53 @@
             <h2 class="text-glow">Roadmap</h2>
             <div class="roadmap">
                 <div class="roadmap-item">
-                    <h3 class="text-glow">Phase 1: Oasis Discovery</h3>
-                    <p>Token launch, website release, and initial marketing sandstorm</p>
+                    <h3 class="text-glow">Phase 1: Alien Arrival</h3>
+                    <p>Token launch, website release, and initial marketing invasion</p>
                 </div>
                 <div class="roadmap-item">
-                    <h3 class="text-glow">Phase 2: Oasis Expansion</h3>
-                    <p>Community growth, partnerships, and "Oasis Oasis Revolution" game development</p>
+                    <h3 class="text-glow">Phase 2: Alien Expansion</h3>
+                    <p>Community growth, partnerships, and "Alien Invasion" game development</p>
                 </div>
                 <div class="roadmap-item">
-                    <h3 class="text-glow">Phase 3: Oasis Ecosystem</h3>
-                    <p>Launch of "Oasis Oasis Revolution", advanced Phantom wallet features, and token utility expansion</p>
+                    <h3 class="text-glow">Phase 3: Alien Ecosystem</h3>
+                    <p>Launch of "Alien Invasion", advanced Phantom wallet features, and token utility expansion</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Phantom Wallet SDK -->
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             const connectWalletButtons = document.querySelectorAll('#connectWallet, #connectWalletSection');
-            
+
+            const connectPhantomWallet = async () => {
+                if (!window.solana || !window.solana.isPhantom) {
+                    alert('Phantom Wallet is not installed. Please install it to proceed.');
+                    return;
+                }
+
+                try {
+                    // Connect to Phantom Wallet
+                    const response = await window.solana.connect();
+                    const publicKey = response.publicKey.toString();
+
+                    // Update UI
+                    connectWalletButtons.forEach(btn => {
+                        btn.textContent = `Connected: ${publicKey.slice(0, 6)}...${publicKey.slice(-4)}`;
+                        btn.disabled = true;
+                    });
+
+                    alert(`Wallet connected successfully! Public Key: ${publicKey}`);
+                } catch (err) {
+                    console.error('Error connecting to Phantom Wallet:', err);
+                    alert('Failed to connect to Phantom Wallet.');
+                }
+            };
+
             connectWalletButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Simulate wallet connection
-                    setTimeout(() => {
-                        alert('Wallet connected successfully!');
-                        connectWalletButtons.forEach(btn => {
-                            btn.textContent = 'Wallet Connected';
-                            btn.disabled = true;
-                        });
-                    }, 1000);
-                });
+                button.addEventListener('click', connectPhantomWallet);
             });
         });
     </script>
