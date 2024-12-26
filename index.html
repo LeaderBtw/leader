@@ -1,170 +1,404 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import styles from './styles.module.css'
-
-export default function Alien3023() {
-  const [tokenStats, setTokenStats] = useState({
-    currentPrice: 'Loading...',
-    marketCap: 'Loading...',
-    volume24h: 'Loading...'
-  })
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    })
-
-    const fetchTokenStats = async () => {
-      const apiUrl = 'https://api.dexscreener.com/latest/dex/pairs/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt'
-
-      try {
-        const response = await fetch(apiUrl)
-        const data = await response.json()
-
-        if (data.pair) {
-          const { priceUsd, fdv, volume } = data.pair
-          setTokenStats({
-            currentPrice: `$${parseFloat(priceUsd).toFixed(6)}`,
-            marketCap: `$${(parseFloat(fdv) / 1e6).toFixed(2)}M`,
-            volume24h: `$${(parseFloat(volume.h24) / 1e3).toFixed(2)}K`
-          })
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien 3023 - The Alien Memecoin Taking Over the Galaxy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --background: 0 0% 0%; /* Black */
+            --foreground: 0 0% 100%; /* White */
+            --primary: 0 0% 100%; /* White */
+            --secondary: 0 0% 50%; /* Gray */
         }
-      } catch (error) {
-        console.error('Error fetching token stats:', error)
-      }
-    }
 
-    fetchTokenStats()
-    const interval = setInterval(fetchTokenStats, 30000)
+        /* Background Image */
+        .alien-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file-83Z5SQ3L1jN8gPdizFTQEj-removebg-preview-G6202Bea1lzYYAli6BXDPY6ZpqOpZB.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    return () => clearInterval(interval)
-  }, [])
+        .background-alien {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/file-83Z5SQ3L1jN8gPdizFTQEj-removebg-preview-G6202Bea1lzYYAli6BXDPY6ZpqOpZB.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            z-index: -1;
+            pointer-events: none;
+        }
 
-  return (
-    <>
-      <Head>
-        <title>Alien 3023 - The Alien Memecoin Taking Over the Galaxy</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-      </Head>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
 
-      <div className={styles.alienBackground}></div>
-      <div className={styles.backgroundAlien}></div>
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            z-index: 1;
+        }
 
-      <nav className={styles.nav}>
-        <div className={styles.container}>
-          <a href="#" className={`${styles.logo} ${styles.textGlow}`}>Alien 3023</a>
-          <div className={styles.navLinks}>
-            <a href="#game">History</a>
-            <a href="#stats">Stats</a>
-            <a href="#about">About</a>
-            <a href="#roadmap">Roadmap</a>
-          </div>
-          <button className={styles.button}>Buy Alien 3023</button>
-        </div>
-      </nav>
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+        }
 
-      <section className={styles.hero}>
-        <div className={styles.container}>
-          <h1 className={styles.textGlow}>Welcome to Alien 3023</h1>
-          <p>The alien memecoin taking over the galaxy</p>
-          <button className={styles.button}>Buy Alien 3023</button>
-        </div>
-      </section>
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
 
-      <section id="game" className={styles.section} data-aos="fade-up">
-        <div className={styles.container}>
-          <h2 className={styles.textGlow}>History of Alien 3023</h2>
-          <div className={styles.historyContent}>
-            <p>
-              In the year <strong>3023</strong>, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
-              Fascinated by humanity's creation of cryptocurrencies, they decided to create their own memecoin: 
-              <strong>Alien 3023</strong>.
-            </p>
-            <p>
-              The aliens chose <strong>Solana</strong> as their blockchain of choice due to its speed and scalability. 
-              They launched Alien 3023 as a token of unity between humans and extraterrestrials, 
-              symbolizing the fusion of Earth's technology and alien innovation.
-            </p>
-            <Image src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" width={400} height={300} className={styles.alienImage} data-aos="zoom-in" />
-            <p>
-              The aliens also introduced a revolutionary <strong>"Alien Wallet"</strong> that allows seamless intergalactic transactions. 
-              With Alien 3023, humans and aliens can now trade, invest, and explore the universe together.
-            </p>
-            <Image src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" width={400} height={300} className={styles.alienImage} data-aos="zoom-in" />
-            <p>
-              Today, Alien 3023 is more than just a memecoin—it's a movement. 
-              Join us as we unlock the mysteries of the cosmos and build a future where Earth and the stars are one.
-            </p>
-          </div>
-        </div>
-      </section>
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            margin: 0 0.5rem;
+        }
 
-      <section id="stats" className={styles.section} data-aos="fade-up">
-        <div className={styles.container}>
-          <h2 className={styles.textGlow}>Alien 3023 Token Stats</h2>
-          <div className={styles.statsGrid}>
-            <div className={styles.statCard} data-aos="fade-right">
-              <h3>Current Price</h3>
-              <p>{tokenStats.currentPrice}</p>
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .button {
+            background: linear-gradient(to right, #000, #fff);
+            color: black;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.25rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #333, #ccc);
+        }
+
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .game-placeholder, .wallet-placeholder, .stats-grid, .roadmap {
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), rgba(128, 128, 128, 0.1));
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(128, 128, 128, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .stat-card p {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .roadmap {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #fff;
+        }
+
+        .roadmap-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -2.25rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .roadmap-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(128, 128, 128, 0.5);
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .chart-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .history-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .history-content p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .alien-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="alien-background"></div>
+    <div class="background-alien"></div>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo text-glow">Alien 3023</a>
+            <div>
+                <a href="#game">History</a>
+                <a href="#stats">Stats</a>
+                <a href="#about">About</a>
+                <a href="#roadmap">Roadmap</a>
             </div>
-            <div className={styles.statCard} data-aos="fade-up">
-              <h3>Market Cap</h3>
-              <p>{tokenStats.marketCap}</p>
-            </div>
-            <div className={styles.statCard} data-aos="fade-left">
-              <h3>24h Volume</h3>
-              <p>{tokenStats.volume24h}</p>
-            </div>
-          </div>
-          <div className={styles.chartContainer} data-aos="zoom-in">
-            <iframe src="https://dexscreener.com/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt?embed=1&theme=dark"></iframe>
-          </div>
+            <button class="button">Buy Alien 3023</button>
         </div>
-      </section>
+    </nav>
 
-      <section id="about" className={styles.section} data-aos="fade-up">
-        <div className={styles.container}>
-          <h2 className={styles.textGlow}>About Alien 3023</h2>
-          <div className={styles.aboutContent}>
-            <p>
-              Alien 3023 isn't just another memecoin. It's an intergalactic phenomenon taking over the crypto galaxy. 
-              Our mission is to create a thriving ecosystem where aliens and humans unite.
-            </p>
-            <p>
-              With our innovative "Alien Wallet", seamless Solana integration, 
-              and a community-driven approach, Alien 3023 is set to become the next big thing in the universe of cryptocurrencies.
-            </p>
-          </div>
+    <section class="hero">
+        <div class="container">
+            <h1 class="text-glow">Welcome to Alien 3023</h1>
+            <p>The alien memecoin taking over the galaxy</p>
+            <button class="button">Buy Alien 3023</button>
         </div>
-      </section>
+    </section>
 
-      <section id="roadmap" className={styles.section} data-aos="fade-up">
-        <div className={styles.container}>
-          <h2 className={styles.textGlow}>Roadmap</h2>
-          <div className={styles.roadmap}>
-            <div className={styles.roadmapItem} data-aos="fade-right">
-              <h3 className={styles.textGlow}>Phase 1: Alien Arrival</h3>
-              <p>Token launch, website release, and initial marketing invasion</p>
+    <section id="game" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-glow">History of Alien 3023</h2>
+            <div class="history-content">
+                <p>
+                    In the year <strong>3023</strong>, an advanced alien civilization from the Andromeda Galaxy discovered Earth. 
+                    Fascinated by humanity's creation of cryptocurrencies, they decided to create their own memecoin: 
+                    <strong>Alien 3023</strong>.
+                </p>
+                <p>
+                    The aliens chose <strong>Solana</strong> as their blockchain of choice due to its speed and scalability. 
+                    They launched Alien 3023 as a token of unity between humans and extraterrestrials, 
+                    symbolizing the fusion of Earth's technology and alien innovation.
+                </p>
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Civilization" class="alien-image" data-aos="zoom-in">
+                <p>
+                    The aliens also introduced a revolutionary <strong>"Alien Wallet"</strong> that allows seamless intergalactic transactions. 
+                    With Alien 3023, humans and aliens can now trade, invest, and explore the universe together.
+                </p>
+                <img src="https://i.imgur.com/3QZQZQZ.png" alt="Alien Spaceship" class="alien-image" data-aos="zoom-in">
+                <p>
+                    Today, Alien 3023 is more than just a memecoin—it's a movement. 
+                    Join us as we unlock the mysteries of the cosmos and build a future where Earth and the stars are one.
+                </p>
             </div>
-            <div className={styles.roadmapItem} data-aos="fade-up">
-              <h3 className={styles.textGlow}>Phase 2: Alien Expansion</h3>
-              <p>Community growth, partnerships, and "Alien Wallet" development</p>
-            </div>
-            <div className={styles.roadmapItem} data-aos="fade-left">
-              <h3 className={styles.textGlow}>Phase 3: Alien Ecosystem</h3>
-              <p>Launch of "Alien Wallet", advanced Solana features, and token utility expansion</p>
-            </div>
-          </div>
         </div>
-      </section>
-    </>
-  )
-}
+    </section>
 
+    <section id="stats" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-glow">Alien 3023 Token Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-right">
+                    <h3>Current Price</h3>
+                    <p id="currentPrice">Loading...</p>
+                </div>
+                <div class="stat-card" data-aos="fade-up">
+                    <h3>Market Cap</h3>
+                    <p id="marketCap">Loading...</p>
+                </div>
+                <div class="stat-card" data-aos="fade-left">
+                    <h3>24h Volume</h3>
+                    <p id="volume24h">Loading...</p>
+                </div>
+            </div>
+            <div class="chart-container" data-aos="zoom-in">
+                <iframe src="https://dexscreener.com/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt?embed=1&theme=dark"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-glow">About Alien 3023</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.25rem; margin-bottom: 1rem;">
+                    Alien 3023 isn't just another memecoin. It's an intergalactic phenomenon taking over the crypto galaxy. 
+                    Our mission is to create a thriving ecosystem where aliens and humans unite.
+                </p>
+                <p style="font-size: 1.25rem;">
+                    With our innovative "Alien Wallet", seamless Solana integration, 
+                    and a community-driven approach, Alien 3023 is set to become the next big thing in the universe of cryptocurrencies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-glow">Roadmap</h2>
+            <div class="roadmap">
+                <div class="roadmap-item" data-aos="fade-right">
+                    <h3 class="text-glow">Phase 1: Alien Arrival</h3>
+                    <p>Token launch, website release, and initial marketing invasion</p>
+                </div>
+                <div class="roadmap-item" data-aos="fade-up">
+                    <h3 class="text-glow">Phase 2: Alien Expansion</h3>
+                    <p>Community growth, partnerships, and "Alien Wallet" development</p>
+                </div>
+                <div class="roadmap-item" data-aos="fade-left">
+                    <h3 class="text-glow">Phase 3: Alien Ecosystem</h3>
+                    <p>Launch of "Alien Wallet", advanced Solana features, and token utility expansion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000, // Animation duration
+            once: true, // Animate only once
+        });
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Fetch live token stats from DexScreener API
+            const fetchTokenStats = async () => {
+                const apiUrl = 'https://api.dexscreener.com/latest/dex/pairs/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt';
+
+                try {
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+
+                    if (data.pair) {
+                        const { priceUsd, fdv, volume } = data.pair;
+
+                        // Update the DOM with live stats
+                        document.getElementById('currentPrice').textContent = `$${parseFloat(priceUsd).toFixed(6)}`;
+                        document.getElementById('marketCap').textContent = `$${(parseFloat(fdv) / 1e6).toFixed(2)}M`;
+                        document.getElementById('volume24h').textContent = `$${(parseFloat(volume.h24) / 1e3).toFixed(2)}K`;
+                    }
+                } catch (error) {
+                    console.error('Error fetching token stats:', error);
+                }
+            };
+
+            // Fetch stats initially and every 30 seconds
+            fetchTokenStats();
+            setInterval(fetchTokenStats, 30000);
+        });
+    </script>
+</body>
+</html>
