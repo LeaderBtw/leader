@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien 3023 - The Alien Memecoin Taking Over the Galaxy</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
@@ -107,6 +109,25 @@
 
         .button:hover {
             background: linear-gradient(to right, #333, #ccc);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #1da1f2; /* Twitter/X blue */
+        }
+
+        .social-icons a.telegram:hover {
+            color: #0088cc; /* Telegram blue */
         }
 
         .hero {
@@ -222,12 +243,10 @@
             border-radius: 0.5rem;
             overflow: hidden;
             margin-top: 2rem;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .history-content {
@@ -264,6 +283,14 @@
                 <a href="#stats">Stats</a>
                 <a href="#about">About</a>
                 <a href="#roadmap">Roadmap</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://t.me/Alien3023" class="telegram" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://x.com/alien_3023" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
             </div>
             <button class="button">Buy Alien 3023</button>
         </div>
@@ -322,8 +349,9 @@
                     <p id="volume24h">Loading...</p>
                 </div>
             </div>
+            <!-- "Coming Soon" Message -->
             <div class="chart-container" data-aos="zoom-in">
-                <iframe src="https://dexscreener.com/solana/ecud1u7cbw1kijriplansi7afsukqvg7uzqwtdt2mvqt?embed=1&theme=dark"></iframe>
+                <h3 class="text-glow" style="font-size: 2rem; color: white;">Coming Soon</h3>
             </div>
         </div>
     </section>
